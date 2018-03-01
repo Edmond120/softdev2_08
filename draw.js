@@ -79,11 +79,13 @@ function tick(){
 	if(dvd){
 		dvdx += dvdvx;
 		dvdy += dvdvy;
-		if(dvdx >= 1000 - dvdr || dvdx <= dvdr){
+		if(dvdx >= 1000 - dvdr || dvdx < dvdr){
 			dvdx *= -1;
+			dvdx += dvdvx;
 		}
-		if(dvdy >= 1000 - dvdr || dvdy <= dvdr){
+		if(dvdy >= 1000 - dvdr || dvdy < dvdr){
 			dvdy *= -1;
+			dvdy += dvdvy;
 		}
 		drawDvd();
 	}
