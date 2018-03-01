@@ -58,7 +58,7 @@ s.addEventListener("click", function(e){
 });
 
 var dvdx = 50;
-var dvdy = 50;
+var dvdy = 100;
 var dvdvx = 1;
 var dvdvy = 1;
 var dvdr = 50;
@@ -77,16 +77,14 @@ function drawCircle(){
 
 function tick(){
 	if(dvd){
-		dvdx += dvdvx;
-		dvdy += dvdvy;
 		if(dvdx >= 1000 - dvdr || dvdx < dvdr){
-			dvdx *= -1;
-			dvdx += dvdvx;
+			dvdvx *= -1;
 		}
 		if(dvdy >= 1000 - dvdr || dvdy < dvdr){
-			dvdy *= -1;
-			dvdy += dvdvy;
+			dvdvy *= -1;
 		}
+		dvdx += dvdvx;
+		dvdy += dvdvy;
 		drawDvd();
 	}
 	else{
